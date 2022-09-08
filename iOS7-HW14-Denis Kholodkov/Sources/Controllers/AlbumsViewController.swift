@@ -54,13 +54,13 @@ class AlbumsViewController: UIViewController {
                                                          heightDimension: .fractionalHeight(1))
 
                    let layoutItem = NSCollectionLayoutItem(layoutSize: itemSize)
-                   layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 5, bottom: 5, trailing: 0)
+                   layoutItem.contentInsets = NSDirectionalEdgeInsets(top: 5, leading: 15, bottom: 10, trailing: 0)
 
-                   let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1 / 2.2),
-                                                          heightDimension: .fractionalWidth(1 / 1.8 * 2))
+                   let groupSize = NSCollectionLayoutSize(widthDimension: .absolute(200),
+                                                          heightDimension: .absolute(470))
 
                    let layoutGroup = NSCollectionLayoutGroup.vertical(layoutSize: groupSize, subitem: layoutItem, count: 2)
-                   layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0)
+                  // layoutGroup.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 0)
 
                    let layoutSection = NSCollectionLayoutSection(group: layoutGroup)
                    layoutSection.contentInsets = NSDirectionalEdgeInsets(top: 0, leading: 10, bottom: 0, trailing: 10)
@@ -104,10 +104,12 @@ class AlbumsViewController: UIViewController {
 
 extension AlbumsViewController: UICollectionViewDelegate, UICollectionViewDataSource {
 
-    
+    func numberOfSections(in collectionView: UICollectionView) -> Int {
+        return Model.arrayModels.count
+    }
 
     func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
-     return 1 // количество
+        return Model.arrayModels[section].count
     }
 
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {

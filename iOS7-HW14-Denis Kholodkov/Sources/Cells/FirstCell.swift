@@ -62,13 +62,13 @@ class FirstCell: UICollectionViewCell {
 
     private func setupLayout() {
         NSLayoutConstraint.activate([
-            firstCellStack.heightAnchor.constraint(equalToConstant: 178),
-            firstCellStack.widthAnchor.constraint(equalToConstant: 178),
+            firstCellStack.heightAnchor.constraint(equalToConstant: 176),
+            firstCellStack.widthAnchor.constraint(equalToConstant: 176),
 
             label.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 3),
             label.leftAnchor.constraint(equalTo: contentView.leftAnchor),
 
-            labelNumber.topAnchor.constraint(equalTo: label.bottomAnchor),
+            labelNumber.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 2),
             labelNumber.leftAnchor.constraint(equalTo: contentView.leftAnchor)
         ])
 
