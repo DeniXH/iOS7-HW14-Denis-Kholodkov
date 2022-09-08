@@ -12,5 +12,7 @@ class MediaLibraryViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         title = "Медиатека"
+        view.backgroundColor = .white
+        navigationController?.navigationBar.prefersLargeTitles = true
     }
 }

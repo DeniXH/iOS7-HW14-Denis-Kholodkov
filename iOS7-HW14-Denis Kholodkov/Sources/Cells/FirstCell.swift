@@ -56,8 +56,8 @@ class FirstCell: UICollectionViewCell {
     private func setupHierarchy() {
         contentView.addSubview(firstCellStack)
         firstCellStack.addArrangedSubview(image)
-        firstCellStack.addSubview(label)
-        firstCellStack.addSubview(labelNumber)
+        contentView.addSubview(label)
+        contentView.addSubview(labelNumber)
     }
 
     private func setupLayout() {
@@ -65,7 +65,7 @@ class FirstCell: UICollectionViewCell {
             firstCellStack.heightAnchor.constraint(equalToConstant: 176),
             firstCellStack.widthAnchor.constraint(equalToConstant: 176),
 
-            label.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 3),
+            label.topAnchor.constraint(equalTo: image.bottomAnchor, constant: 2),
             label.leftAnchor.constraint(equalTo: contentView.leftAnchor),
 
             labelNumber.topAnchor.constraint(equalTo: label.bottomAnchor, constant: 2),
